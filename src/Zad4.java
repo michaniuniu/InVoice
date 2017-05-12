@@ -10,7 +10,9 @@ public class Zad4 {
 		ArrayList<InVoice> inVoice = new ArrayList<InVoice>();
 		
 		boolean exit = true,	ifID=true;
-		int		parmID,			parmAmount;			double parmPrice;	String parmDescription;
+		int		parmID,			parmAmount;			
+		double	parmPrice;	
+		String 	parmDescription;
 		int 	menu = 9,		printProduct = 0;
 		Scanner scanner = new Scanner(System.in);	
 		
@@ -19,8 +21,8 @@ public class Zad4 {
 			System.out.println("\tWcisnij \"1\" aby dodac nowy przedmiot.");
 			System.out.println("\tWcisnij \"2\" aby wyswietlic przedmiot.");
 			System.out.println("\tWcisnij \"3\" aby usunac przedmiot." );
-			System.out.println("\tWcisnij \"4\" aby wyœwietliæ wszystkie przdmioty");
-			System.out.println("\tWcisnij \"9\" aby Zakoñczyæ program." );
+			System.out.println("\tWcisnij \"4\" aby wyswietliÄ‡ wszystkie przdmioty");
+			System.out.println("\tWcisnij \"9\" aby ZakoÅ„czyÄ‡ program." );
 			
 			System.out.println("Size of Array: " + inVoice.size());
 			menu=ScannerInt();
@@ -33,7 +35,7 @@ public class Zad4 {
 					ifID=false;
 					for (int i = 0; i < inVoice.size();i++){
 						if(inVoice.get(i).ID == parmID){
-							System.out.println("Jest ju¿ produkt z takim ID\nPodaj inne ID:");
+							System.out.println("Jest juÅ¼ produkt z takim ID\nPodaj inne ID:");
 							ifID=true;	break;
 						}
 					}
@@ -45,7 +47,7 @@ public class Zad4 {
 				System.out.println("Wprowadz ilosc kupionych sztuk");
 				parmAmount = ScannerInt();
 				
-				System.out.println("Wprowadz cene za sztukê.");
+				System.out.println("Wprowadz cene za sztukaÄ‡.");
 				parmPrice = ScannerDouble();
 				
 				inVoice.add(new InVoice(parmID,parmDescription,parmAmount,parmPrice));	
@@ -68,7 +70,7 @@ public class Zad4 {
 							printProduct = i;
 							ifID=true;	break;
 						}else if( (i + 1) == inVoice.size() ){
-							System.out.println("Nie ma przedmiotu z takim ID, wybierz prawid³owe.");						
+							System.out.println("Nie ma przedmiotu z takim ID, wybierz prawidÅ‚owe.");						
 						}
 					}
 				}while(!ifID);	ifID=true;
@@ -77,11 +79,11 @@ public class Zad4 {
 				System.out.println("Opis to: " + inVoice.get(printProduct).getDescription());
 				System.out.println("Ilosc to: " + inVoice.get(printProduct).getAmount());
 				System.out.println("Cena to: " + inVoice.get(printProduct).getPrice());
-				System.out.println("Wartoœæ wszystkich produktów: " + inVoice.get(printProduct).getInVoiceAmount(inVoice.get(printProduct).getAmount(),inVoice.get(printProduct).getPrice()));
+				System.out.println("WartoÅ›Ä‡ wszystkich produktÃ³w: " + inVoice.get(printProduct).getInVoiceAmount(inVoice.get(printProduct).getAmount(),inVoice.get(printProduct).getPrice()));
 				break;
 			}
 			case 3:{
-				System.out.println("Wybierz ID przedmiotu który chcesz usun¹æ");
+				System.out.println("Wybierz ID przedmiotu ktÃ³ry chcesz usunÄ…Ä‡");
 				
 				do{
 					printProduct = ScannerInt();
@@ -91,7 +93,7 @@ public class Zad4 {
 							printProduct = i;
 							ifID=true;	break;
 						}else if( (i + 1) == inVoice.size() ){
-							System.out.println("Nie ma przedmiotu z takim ID, wybierz prawid³owe.");						
+							System.out.println("Nie ma przedmiotu z takim ID, wybierz prawidï¿½owe.");						
 						}
 					}
 				}while(!ifID);	ifID=true;
@@ -107,7 +109,7 @@ public class Zad4 {
 					System.out.println("Opis \t" + (i+1) + ".go przedmiotu to: " + inVoice.get(i).getDescription());
 					System.out.println("Ilosc \t" + (i+1) + ".go przedmiotu to: " + inVoice.get(i).getAmount());
 					System.out.println("Cena \t" + (i+1) + ".go przedmiotu to: " + inVoice.get(i).getPrice());
-					System.out.println("Wartoœæ wszystkich przedmiotów o tym ID to: " + inVoice.get(i).getInVoiceAmount(inVoice.get(i).getAmount(),inVoice.get(i).getPrice()) + "\n");
+					System.out.println("WartoÅ›Ä‡ wszystkich przedmiotÃ³w o tym ID to: " + inVoice.get(i).getInVoiceAmount(inVoice.get(i).getAmount(),inVoice.get(i).getPrice()) + "\n");
 					
 				}
 				break;
@@ -118,7 +120,7 @@ public class Zad4 {
 				break;
 			}
 			default:{
-				System.out.println("Z³y wybór, popraw siê!");
+				System.out.println("ZÅ‚y wybÃ³r, popraw siÄ™!");
 				break;
 			}
 			}
@@ -132,7 +134,7 @@ public class Zad4 {
 			try{
 				return scanner.nextInt();
 			}catch(InputMismatchException e){
-				System.out.println("Podany argument nie jest liczb¹.\nPodaj jeszcze raz.");
+				System.out.println("Podany argument nie jest liczbÄ™.\nPodaj jeszcze raz.");
 				scanner.next();
 			}
 		}while(true);
@@ -144,7 +146,7 @@ public class Zad4 {
 			try{
 				return scanner.nextDouble();
 			}catch(InputMismatchException e){
-				System.out.println("Podany argument nie jest liczb¹.\nPodaj jeszcze raz.");
+				System.out.println("Podany argument nie jest liczbÄ™.\nPodaj jeszcze raz.");
 				scanner.next();
 			}
 		}while(true);		
