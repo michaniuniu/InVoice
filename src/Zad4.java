@@ -14,7 +14,7 @@ public class Zad4 {
 		double	parmPrice;	
 		String 	parmDescription;
 		int 	menu = 9,		printProduct = 0;
-		Scanner scanner = new Scanner(System.in);	
+		scanner = new Scanner(System.in);	
 		
 		do{	
 			System.out.println("MENU:");
@@ -39,7 +39,8 @@ public class Zad4 {
 							ifID=true;	break;
 						}
 					}
-				}while(ifID);	ifID=true;
+				}while(ifID);	
+				ifID=true;
 				
 				System.out.println("Wprowadz opis przedmiotu");
 				parmDescription = scanner.nextLine();
@@ -129,7 +130,7 @@ public class Zad4 {
 	}
 	
 	public static int ScannerInt(){
-		 scanner = new Scanner(System.in);	
+		
 		do{	
 			try{
 				return scanner.nextInt();
@@ -141,7 +142,7 @@ public class Zad4 {
 		
 	};
 	public static double ScannerDouble(){
-		scanner = new Scanner(System.in);	
+			
 		do{	
 			try{
 				return scanner.nextDouble();
